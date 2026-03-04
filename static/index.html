@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stanza | Intelligent Poetry Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    
+    <div class="container">
+        <header>
+            <h1>Stanza</h1>
+            <p>Crafting beautiful poems tailored for every grade level.</p>
+        </header>
+
+        <main>
+            <div class="input-panel glass-card">
+                <form id="poetry-form">
+                    <div class="form-group">
+                        <label for="theme">What should the poem be about?</label>
+                        <input type="text" id="theme" placeholder="e.g., A rainy day in a magical forest..." required autocomplete="off">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="grade-level">Select Grade Level</label>
+                        <div class="custom-select">
+                            <select id="grade-level" required>
+                                <option value="" disabled selected>Choose a level...</option>
+                                <option value="Kindergarten">Kindergarten</option>
+                                <option value="1st Grade">1st Grade</option>
+                                <option value="2nd Grade">2nd Grade</option>
+                                <option value="3rd Grade">3rd Grade</option>
+                                <option value="4th Grade">4th Grade</option>
+                                <option value="5th Grade">5th Grade</option>
+                                <option value="Middle School">Middle School</option>
+                                <option value="High School">High School</option>
+                                <option value="College/Adult">College/Adult</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" id="generate-btn">
+                        <span class="btn-text">Generate Poem</span>
+                        <div class="loader" id="btn-loader"></div>
+                    </button>
+                </form>
+            </div>
+
+            <div class="output-panel glass-card" id="output-panel">
+                <div class="empty-state" id="empty-state">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    <p>Your poem will appear here</p>
+                </div>
+                <div class="poetry-content" id="poetry-content">
+                    <!-- Generated poetry injected here -->
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
